@@ -49,5 +49,22 @@ ballroom-beats-service/vendor/github.com/gin-gonic/gin
 ballroom-beats-service
 ```
 
+If you don't see that output, it's fine.
+
+
+The database configuration needs to change for development vs production mode. If you try to run the binary locally with the production database, you'll see an error that looks like this:
+
+```bash
+$ heroku local web
+7:09:32 PM web.1 |  panic: pq: no pg_hba.conf entry for host "73.95.251.223", user "hlbjcopbpxwheo", database "ddpi9katt80n0p", SSL off
+7:09:32 PM web.1 |  goroutine 1 [running]:
+7:09:32 PM web.1 |  main.init.0()
+7:09:32 PM web.1 |  	/Users/id/src/turing/tmp/src/ballroom-beats-service/main.go:40 +0x281
+[DONE] Killing all processes with signal  SIGINT
+7:09:32 PM web.1 Exited with exit code null
+```
+
+Be sure you uncomment the production settings and production connection before compiling and deploying to Heroku or your application will not work.
+
 
 
