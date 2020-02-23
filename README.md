@@ -67,4 +67,11 @@ $ heroku local web
 Be sure you uncomment the production settings and production connection before compiling and deploying to Heroku or your application will not work.
 
 
+## Reseting modules
+
+Run this command to remove any unused modules: `go mod tidy`
+
+Run this command to install any new modules: `go mod vendor`
+
+
 
