@@ -10,18 +10,28 @@ import (
 	_ "github.com/lib/pq"
 )
 
+// development
+// const (
+// 	host   = "localhost"
+// 	port   = 5432
+// 	dbname = "ballroom_beats_development"
+// )
+
+// production
 const (
-	host   = "localhost"
+	host   = "ec2-54-197-34-207.compute-1.amazonaws.com"
 	port   = 5432
-	dbname = "ballroom_beats_development"
+	dbname = "ddpi9katt80n0p"
+	dbusername = "hlbjcopbpxwheo"
+	dbpassword = "a98b2d22b63444ded26df1986a3351b23f4be1f69bf35d95fa2173c2d6591b0a"
 )
+
 
 var db *gorm.DB
 
 func init() {
-	psqlInfo := fmt.Sprintf("host=%s port=%d "+
-		"dbname=%s sslmode=disable",
-		host, port, dbname)
+	// psqlInfo := fmt.Sprintf("host=%s port=%d dbname=%s sslmode=disable", host, port, dbname) // development
+	psqlInfo := fmt.Sprintf("host=%s port=%d dbname=%s sslmode=disable user=%s password=%s", host, port, dbname, dbusername, dbpassword)
 	var err error
 
 	db, err = gorm.Open("postgres", psqlInfo)
