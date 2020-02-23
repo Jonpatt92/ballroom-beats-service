@@ -1,0 +1,10 @@
+{
+  "name": "Ballroom Backend Service",
+  "description": "Mod 4 cross-pollination project",
+  "keywords": [
+    "go",
+    "ballroom"
+  ],
+  "website": "http://turing.io",
+  "repository": "http://github.com/jonpatt92/ballroom-beats-servic"
+}
